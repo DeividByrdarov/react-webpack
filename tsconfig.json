@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "baseUrl": "src",
+    "paths": {
+      "*": ["*"]
+    },
     "sourceMap": true,
     "noImplicitAny": true,
     "esModuleInterop": true,

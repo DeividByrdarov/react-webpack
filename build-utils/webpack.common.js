@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const commonPaths = require('./common-paths')
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
+const commonPaths = require("./common-paths")
 
 module.exports = {
   entry: "./src/index.js",
@@ -34,9 +35,9 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
-          'url-loader?limit=10000',
-          'img-loader'
-        ]
+          "url-loader?limit=10000",
+          "img-loader",
+        ],
       },
 
       // Fonts Loader
@@ -44,17 +45,20 @@ module.exports = {
         test: /\.(woff(2)?|ttf|eot)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      }
-    ]
+              name: "[name].[ext]",
+              outputPath: "fonts/",
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"],
+    plugins: [
+      new TsconfigPathsPlugin({ configFile: commonPaths.projectRoot }),
+    ],
   },
 }
