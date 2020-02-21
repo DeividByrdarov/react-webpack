@@ -1,6 +1,14 @@
+# Mac specific
+.DS_STORE
+
+# IDE specific
 .idea
+.vscode
 
+# Node Modules and Lock files
 node_modules
-
-.env
+package-lock.json
 yarn.lock
+
+# Environment
+.env
