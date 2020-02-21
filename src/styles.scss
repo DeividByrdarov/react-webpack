@@ -1,0 +1,14 @@
+@import "styles/fonts";
+@import "styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #app {
+  width: 100vw;
+  height: 100vh;
+  font-family: $main-font;
+  color: $font-color;
+}
